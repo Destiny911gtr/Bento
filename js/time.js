@@ -23,17 +23,15 @@ function displayClock() {
   var dd = d.getDate();
   var min = (mins = ('0' + d.getMinutes()).slice(-2));
   var hh = d.getHours();
-  var ampm = '';
 
   if (format_12hour) {
-    ampm = hh >= 12 ? ' pm' : ' am';
     hh = hh % 12;
     hh = hh ? hh : 12; //show mod 0 as 12
   }
 
   document.getElementById('hour').innerText = hh;
   document.getElementById('separator').innerHTML = ' : ';
-  document.getElementById('minutes').innerText = min + ampm;
+  document.getElementById('minutes').innerText = min;
 
   document.getElementById('month').innerText = mm;
   document.getElementById('day').innerText = dd;
